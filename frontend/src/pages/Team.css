@@ -1,0 +1,102 @@
+.team-container {
+  width: 100%;
+  background: white;
+  padding: 30px;
+  border-radius: 14px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+}
+
+.team-container h2 {
+  margin-bottom: 25px;
+  font-weight: 600;
+  font-size: 22px;
+  color: #1e293b;
+}
+
+.team-form {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 18px;
+  margin-bottom: 30px;
+}
+
+.team-form input,
+.team-form select {
+  padding: 11px 14px;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  font-size: 14px;
+  background: #f9fafc;
+  transition: 0.2s ease;
+}
+
+.team-form input:focus,
+.team-form select:focus {
+  outline: none;
+  border-color: #2563eb;
+  background: #ffffff;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+.team-form button {
+  padding: 11px 20px;
+  border-radius: 10px;
+  border: none;
+  background: #2563eb;
+  color: white;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.team-form button:hover {
+  background: #1e40af;
+}
+
+.team-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.team-table th {
+  padding: 14px 10px;
+  text-align: left;
+  font-size: 13px;
+  font-weight: 600;
+  background: #f8fafc;
+  color: #475569;
+  border-bottom: 2px solid #e2e8f0;
+}
+
+.team-table td {
+  padding: 14px 10px;
+  font-size: 14px;
+  border-bottom: 1px solid #f1f5f9;
+  color: #334155;
+}
+
+.team-table tr:hover {
+  background: #f8fafc;
+}
+
+.team-table button {
+  padding: 6px 12px;
+  border-radius: 8px;
+  border: none;
+  margin-right: 6px;
+  cursor: pointer;
+}
+
+.team-table button:nth-child(1) {
+  background: #10b981;
+  color: white;
+}
+
+.team-table button:nth-child(2) {
+  background: #ef4444;
+  color: white;
+}
+
+.team-table button:nth-child(3) {
+  background: #6366f1;
+  color: white;
+}
