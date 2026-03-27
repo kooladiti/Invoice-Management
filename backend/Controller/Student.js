@@ -19,13 +19,14 @@ const getstudentdata = async (req, res) => {
  */
     const db = await database.connectDB();
     const result = await db.collection("student").find({}).toArray();
-
+    console.log(result);
+    
     return res.status(200).json({
       status: 200,
       data: result,
       // user: decoded   // optional: shows token payload
     });
-
+  
   } catch (err) {
 
     return res.status(401).json({
