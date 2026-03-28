@@ -47,7 +47,7 @@ app.post("/sendmail", async (req, res) => {
   }
 });
 
-// ===== API ROUTES (IMPORTANT - FIRST) =====
+// ✅ API ROUTES (no /api)
 app.use(indexrouter);
 
 // ===== FRONTEND BUILD PATH =====
@@ -56,17 +56,19 @@ const buildPath = path.join(__dirname, "../frontend/build");
 // Serve static files
 app.use(express.static(buildPath));
 
-// ===== FIXED REACT FALLBACK =====
+// ✅ SMART FALLBACK (IMPORTANT)
 app.use((req, res, next) => {
-  if (req.path.startsWith("/api")) {
-    return next(); // 👈 API requests ko skip karo
+  // agar request API wali hai (json expect ho raha hai)
+  if (req.headers.accept && req.headers.accept.includes("application/json")) {
+    return next();
   }
+
   res.sendFile(path.join(buildPath, "index.html"));
 });
 
-// ===== SERVER START =====
-const PORT = 2000;
+// ✅ PORT FIX
+const PORT = process.env.PORT || 2000;
 
 app.listen(PORT, () => {
-  console.log(`🚀 Server running on http://localhost:${PORT}`);
+  console.log(`🚀 Server running on port ${PORT}`);
 });
