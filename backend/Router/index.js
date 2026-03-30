@@ -1,7 +1,7 @@
 const express=require("express")
 const router=express.Router();
 
-const st=require('../controller/student')
+const st=require('../controller/Student')
 
 const ur=require('../Controller/User')
 
